@@ -1,0 +1,147 @@
+{
+  "ID": "do_DraggableGridView",
+  "IsContainer": "0",
+  "Type": "UI",
+  "Name": "可拖拽的网格视图",
+  "Version": "Internal",
+  "Description": "DraggableGridView是一个可拖拽的二维网格滚动视图，可将数据源中的一条数据显示为表格中的一个cell",
+  "Icon": "https://deviceone.blob.core.chinacloudapi.cn/store/D/20160121/do_DraggableGridView/拖拽网格.jpg",
+  "IOS": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "Android": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "Windows": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "WindowsPhone": {
+    "Support": 0,
+    "MinVersion": ""
+  },
+  "Html": {
+    "Support": 1,
+    "MinVersion": "5.0"
+  },
+  "Properties": [
+    {
+      "ID": "hSpacing",
+      "Name": "两列之间的间距",
+      "Type": "Number",
+      "DefaultValue": "",
+      "EditType": "0",
+      "Group": "",
+      "Description": "两列之间的间距，单位为px",
+      "Design": {
+        "Type": "UInteger",
+        "Data": []
+      }
+    },
+    {
+      "ID": "numColumns",
+      "Name": "DraggableGridView对应的列数",
+      "Type": "Number",
+      "DefaultValue": "",
+      "EditType": "0",
+      "Group": "",
+      "Description": "设置这个DraggableGridView显示多少列，-1 表示自动适应，iOS不支持（通过cell的宽度和屏幕宽度自动计算列数）",
+      "Design": {
+        "Type": "UInteger",
+        "Data": []
+      }
+    },
+    {
+      "ID": "templates",
+      "Name": "显示视图对应UI模板文件",
+      "Type": "Node",
+      "DefaultValue": "",
+      "EditType": "0",
+      "Group": "",
+      "Description": "一个DraggableGridView可以有多个cell模板，这个属性是一个json array，每一个元素都是一个source ui文件，这些ui文件没有自己的逻辑代码，和DraggableGridView所在的page共用一个脚本环境。\r\n这个属性的格式类似如下：\r\n[\"source://view/cell1.ui\",\"source://view/cell2.ui\",\"source://view/cell3.ui]；多模版的大小需要一致",
+      "Design": {
+        "Type": "Richtext",
+        "Data": []
+      }
+    },
+    {
+      "ID": "vSpacing",
+      "Name": "两行之间的间距",
+      "Type": "Number",
+      "DefaultValue": "",
+      "EditType": "0",
+      "Group": "",
+      "Description": "两行之间的间距，单位为px",
+      "Design": {
+        "Type": "UInteger",
+        "Data": []
+      }
+    }
+  ],
+  "Events": [
+    {
+      "ID": "dragged",
+      "Description": "cell拖拽到其它cell位置并松开手指后触发",
+      "ReturnType": "Node",
+      "ReturnDesc": "{'old':未拖动之前的数据索引,'new':拖动之后的数据索引}"
+    },
+    {
+      "ID": "longTouch",
+      "Description": "长按cell触发",
+      "ReturnType": "String",
+      "ReturnDesc": "当前cell的position值"
+    },
+    {
+      "ID": "touch",
+      "Description": "点击cell触发",
+      "ReturnType": "String",
+      "ReturnDesc": "当前cell的position值"
+    }
+  ],
+  "syncMethodes": [
+    {
+      "ID": "bindItems",
+      "Name": "绑定item的数据",
+      "Description": "可绑定listData实例",
+      "ReturnType": "",
+      "ReturnDesc": "",
+      "Paras": [
+        {
+          "ID": "data",
+          "Name": "数据",
+          "Type": "Node",
+          "Required": 0,
+          "DefaultValue": "",
+          "Description": ""
+        }
+      ]
+    },
+    {
+      "ID": "cancel",
+      "Name": "退出可以拖拽的状态",
+      "Description": "",
+      "ReturnType": "",
+      "ReturnDesc": "",
+      "Paras": []
+    },
+    {
+      "ID": "edit",
+      "Name": "进入可以拖拽的状态",
+      "Description": "",
+      "ReturnType": "",
+      "ReturnDesc": "",
+      "Paras": []
+    },
+    {
+      "ID": "refreshItems",
+      "Name": "刷新item数据",
+      "Description": "",
+      "ReturnType": "",
+      "ReturnDesc": "",
+      "Paras": []
+    }
+  ],
+  "asyncMethodes": []
+}
